@@ -1,5 +1,6 @@
 require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/contrib/all' if development?
+require 'json'
 require 'pry'
 require 'pg'
 
@@ -18,7 +19,12 @@ end
 get '/videos/' do # index
   sql = 'SELECT * FROM videos ORDER BY id DESC' #Most recently added videos first
   @videos = @db.exec(sql)
-  erb :index
+
+  if request.xhr?
+    json @videos.entries
+  else
+    erb :index
+  end
 end
 
 get '/videos/new' do # new
