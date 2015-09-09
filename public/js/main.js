@@ -10,9 +10,29 @@ $(document).ready(function() {
   $('#add-video-button').on('click', function() {
     // handle submission of our json data
     event.preventDefault();
+    submitNewVideo();
   })
 
 })
+
+function submitNewVideo() {
+  // put the form data in a hash
+  data = {
+    video_id: $('#video_id').val(),
+    title: $('#title').val(),
+    description: $('#description').val()
+   };
+
+  $.post('/videos', data, function(response) {
+    console.log(response);
+    prependNewVideo(response);
+    // empty out the form
+    $('#video_id').val('');
+    $('#title').val('');
+    $('#description').val('');
+  })
+
+}
 
 function getVideos() {
   // ajax call gets array of all videos

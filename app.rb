@@ -32,7 +32,7 @@ get '/videos/new' do # new
 end
 
 post '/videos/' do # create
-# binding.pry
+binding.pry
 # This whole section is obviously not DRY but I can't get it to work any other way
 
 params[:title].gsub!("'", "''")
