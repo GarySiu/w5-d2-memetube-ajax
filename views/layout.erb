@@ -10,10 +10,18 @@
 <nav>
   <ul>
     <li><a href="/videos/">Home</a></li>
-    <li><a href="/videos/new">Add A Video</a></li>
+    <li><a href='#' id="new-video-link">Add A Video</a></li>
     <li><a href="/videos/random">Random Video</a></li>
   </ul>
 </nav>
+<div id="new-video-form-container">
+  <form id="new-video-form">
+    <div class="form-row"><input type="text" size="80" name="video_id" id="video_id" placeholder="Youtube URL"></div>
+    <div class="form-row"><input type="text" size="80" name="title" id="title" placeholder="Enter a title"></div><!-- This is temporary! Will do it properly with css -->
+    <div class="form-row"><textarea maxlength="500" cols="79" rows="5" placeholder="Enter a description" name="description" id="description"></textarea></div>
+    <div class="form-row"><button type="submit" id="add-video-button">Add new video</button></div>
+  </form>
+</div>
   <%= yield %>
   <script src="/js/jquery-2.1.4.min.js"></script>
   <script src="/js/main.js"></script>

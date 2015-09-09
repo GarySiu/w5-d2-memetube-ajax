@@ -30,6 +30,12 @@ div.video-container {
   margin: 0 auto;
 }
 
+div#new-video-form-container {
+  width: 640px;
+  margin: 0 auto;
+  display: none;
+}
+
 .video-container a {
   text-decoration: inherit;
 }

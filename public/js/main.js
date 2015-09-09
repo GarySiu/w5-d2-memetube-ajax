@@ -1,6 +1,17 @@
 $(document).ready(function() {
   // console.log('Hello sleepy world');
   getVideos();
+
+  $('#new-video-link').on('click', function() {
+    // display and hide our form
+    $('#new-video-form-container').toggle();
+  })
+
+  $('#add-video-button').on('click', function() {
+    // handle submission of our json data
+    event.preventDefault();
+  })
+
 })
 
 function getVideos() {
