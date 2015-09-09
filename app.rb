@@ -17,7 +17,7 @@ get '/' do
 end
 
 get '/videos/' do # index
-  sql = 'SELECT * FROM videos ORDER BY id DESC' #Most recently added videos first
+  sql = 'SELECT * FROM videos ORDER BY id' #Most recently added videos last. The Ajax will insert from the top.
   @videos = @db.exec(sql)
 
   if request.xhr?
